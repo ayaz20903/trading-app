@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import cors from 'cors';
+import cors from "cors";
 import axios from 'axios';
 import dotenv from 'dotenv';
 
@@ -44,6 +44,11 @@ app.get('/api/stock-data', async (req: Request, res: Response) => {
   }
 });
 
+if (process.env.VERCEL_ENV === undefined) {
+  app.listen(PORT, () => {
+    console.log(`Server is running locally on port ${PORT}`);
+  });
+}
 
 // app.get('/api/data/:symbol', async (req, res) => {
 //   const { symbol } = req.params; // Get the symbol from the URL parameters
@@ -64,6 +69,6 @@ app.get('/api/stock-data', async (req: Request, res: Response) => {
 
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });
