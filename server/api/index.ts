@@ -60,7 +60,7 @@ if (process.env.VERCEL_ENV === undefined) {
 //               token: FINNHUB_API_KEY,
 //           },
 //       });
-//       res.json(response.data); // Send the data back to the frontend
+//       res.json(response.data);
 //   } catch (error) {
 //       console.error('Error fetching data from Finnhub:', error);
 //       res.status(500).json({ error: 'Failed to fetch data from Finnhub' });
